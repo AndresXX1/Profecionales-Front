@@ -1,0 +1,69 @@
+.usuarios-container {
+    margin: 20px;
+    padding: 20px;
+    border-radius: 10px;
+    background-color: #f9f9f900; /* Color de fondo de la sección */
+    font-family: 'Comic Sans MS', cursive, sans-serif; /* Cambia la fuente a Comic Sans */
+    margin-top: -60px;
+}
+
+.usuarios-title {
+    text-align: center;
+    margin-bottom: 40px;
+}
+
+.table-container {
+    max-height: 400px; /* Altura máxima para mostrar hasta 10 usuarios */
+    overflow-y: auto;  /* Scroll vertical */
+    background-color: rgba(255, 255, 255, 0.7); /* Mejorar la visibilidad */
+}
+
+.usuarios-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+.usuarios-table th,
+.usuarios-table td {
+    padding: 12px 15px; /* Espaciado ajustado */
+    text-align: center; /* Centrar texto */
+}
+
+.usuarios-table th {
+    background-color: #0a3a3a; /* Color de fondo para el encabezado */
+    color: white;
+    position: sticky; /* Fijar el encabezado */
+    top: 0; /* Fijar en la parte superior */
+    z-index: 1; /* Asegurarse de que esté encima de otras celdas */
+}
+
+.usuarios-table td {
+    background-color: #cdd4dab7; /* Color de fondo para las celdas de valores */
+}
+
+.usuarios-table tr:hover {
+    background-color: #f1f1f1b3; /* Efecto hover */
+}
+
+.actions {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Espacio entre botones */
+}
+
+.edit-input {
+    width: 80%; /* Ajustar el ancho del input */
+    margin: 0 auto; /* Centrar el input */
+}
+
+/* Media Queries para Responsividad */
+@media (max-width: 768px) {
+    .usuarios-table th,
+    .usuarios-table td {
+        padding: 8px; /* Espaciado reducido en pantallas pequeñas */
+    }
+    
+    .edit-input {
+        width: 90%; /* Aumentar el ancho en pantallas pequeñas */
+    }
+}

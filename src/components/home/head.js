@@ -1,6 +1,7 @@
 import React, { useEffect, useRef } from 'react';
 import { Box, Container, Typography, Grid, Button, useMediaQuery, useTheme } from "@mui/material";
 import { ArrowForward } from "@mui/icons-material";
+import { Link } from 'react-router-dom';
 
 
 export default function HeroSection() {
@@ -168,6 +169,7 @@ export default function HeroSection() {
             >
               Sistema integral de gestión para proyectos de construcción
             </Typography>
+            <Link to="/home">
             <Button
               variant="contained"
               color="primary"
@@ -207,6 +209,7 @@ export default function HeroSection() {
             >
               Comenzar Ahora
             </Button>
+            </Link>
           </Grid>
         </Grid>
       </Container>

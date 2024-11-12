@@ -34,12 +34,12 @@ import FunctionsIcon from '@mui/icons-material/Functions';
 import HelpIcon from '@mui/icons-material/Help';
 import AccountCircle from '@mui/icons-material/AccountCircle';
 import PersonIcon from '@mui/icons-material/Person';
-// import PerfilDeUsuario from './perfilDeUsuario';
-// import Configuraciones from './configuraciones';
+import PerfilDeUsuario from '../perfilDeUsuario/perfilDeUsuario';
+import Configuraciones from '../configuraciones/configuraciones';
 import BarChartIcon from '@mui/icons-material/BarChart';
 // import PieDePagina from './pieDePagina';
 import { Link, useLocation, useNavigate } from 'react-router-dom';
-// import { useAuth } from '../components/localStore/authContext'; // Asegúrate de importar tu contexto de autenticación
+import { useAuth } from '../localStore/authContext'; 
 
 const theme = createTheme({
     palette: {
@@ -108,7 +108,7 @@ function Dashboard({ children }) {
     const scrollRef = useRef(null);
     const location = useLocation();
     const navigate = useNavigate();
-    // const { logout } = useAuth(); // Usa el contexto de autenticación
+    const { logout } = useAuth(); 
 
     const toggleDrawer = () => {
         setDrawerOpen(!drawerOpen);
@@ -133,11 +133,11 @@ function Dashboard({ children }) {
         setDrawerOpen(false);
     };
 
-    // const handleLogout = () => {
-    //     logout(); // Llama a la función de logout
-    //     localStorage.clear(); // Limpia el localStorage
-    //     navigate('/'); // Redirige al usuario a la página de inicio
-    // };
+    const handleLogout = () => {
+        logout(); // Llama a la función de logout
+        localStorage.clear(); // Limpia el localStorage
+        navigate('/'); // Redirige al usuario a la página de inicio
+    };
 
     const handleCloseProfileDialog = () => {
         setProfileDialogOpen(false);
@@ -326,7 +326,7 @@ function Dashboard({ children }) {
                 >
                     <MenuItem onClick={() => { handleCloseMenu(); handleNavigation("/perfil"); }}>Perfil de Usuario</MenuItem>
                     <MenuItem onClick={() => { handleCloseMenu(); handleNavigation("/configuraciones"); }}>Configuraciones</MenuItem>
-                    {/* <MenuItem onClick={() => { handleCloseMenu(); handleLogout(); }}>Cerrar Sesión</MenuItem> */}
+                    <MenuItem onClick={() => { handleCloseMenu(); handleLogout(); }}>Cerrar Sesión</MenuItem> 
                 </Menu>
 
                 <Box component="main" sx={{ flexGrow: 1, p: 3, mt: 8 }}>
@@ -358,7 +358,7 @@ function Dashboard({ children }) {
                         isScrolling={isScrolling}
                         sx={{ bgcolor: theme.palette.background.default, p: 0 }}
                     >
-                        {/* <PerfilDeUsuario /> */}
+                         <PerfilDeUsuario /> 
                     </ScrollDialogContent>
                     <DialogActions sx={{ backgroundColor: theme.palette.primary.main }}>
                         <Button onClick={handleCloseProfileDialog} sx={{ color: '#ffffff' }}>
@@ -386,7 +386,7 @@ function Dashboard({ children }) {
                         Configuraciones
                     </DialogTitle>
                     <DialogContent>
-                        {/* <Configuraciones /> */}
+                         <Configuraciones /> 
                     </DialogContent>
                     <DialogActions sx={{ backgroundColor: theme.palette.primary.main }}>
                         <Button onClick={handleCloseConfigDialog} sx={{ color: '#ffffff' }}>
